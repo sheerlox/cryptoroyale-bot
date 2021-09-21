@@ -179,8 +179,11 @@ try:
         print("Mouse position: %f / %f" % (mouse_position_x, mouse_position_y))
         print('--------------')
         
-        driver.execute_script("user_state.local.mousecoords = { 'x': %f, 'y': %f }" % (mouse_position_x * 0.73, mouse_position_y * 0.73))
+        driver.execute_script("user_state.local.mousecoords = { 'x': %f, 'y': %f }" % (nearest_loot['pos_x'] * 0.73, nearest_loot['pos_y'] * 0.73))
 
+        # boost every tick
+        action = webdriver.common.action_chains.ActionChains(driver)
+        action.click().perform()
 
     driver.close()
 except:
