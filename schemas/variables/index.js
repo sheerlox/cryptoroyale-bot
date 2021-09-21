@@ -36,8 +36,6 @@ const Loot = schema({
     'abouttodie': Number,
 })
 
-console.table(game_state.loot)
-
 // variable game_state
 const GameState = schema({
     'cycle': schema({
@@ -78,7 +76,7 @@ const UserState = schema({
             Number,
         ]),
     }),
-    '?pid': Number,
+    '?pid': Number, // Player ID (if in game)
     'playing': Boolean,
     'logged_in': Boolean,
     'spent': Number,
